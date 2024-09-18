@@ -4,6 +4,10 @@ const ContactUs = () => {
     return (
         <div>
             This is ContactUs Page
+
+            <section>
+                add some things to
+            </section>
         </div>
     );
 };
