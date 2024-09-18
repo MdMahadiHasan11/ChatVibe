@@ -15,14 +15,14 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Chatvibe",
-  description: "create with next js",
+  description: "Connect with won",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <main className="w-7xl mx-auto">
+        <main className="max-w-screen-2xl mx-auto">
           <Navbar />
           {children}
         </main>
