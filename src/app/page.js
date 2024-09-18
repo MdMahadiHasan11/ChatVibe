@@ -1,3 +1,5 @@
+
+import Navbar from "@/components/shareComponent/Navbar";
 import React from "react";
 
 function HomePage() {
