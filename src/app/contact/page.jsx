@@ -1,14 +1,14 @@
 "use client";
-import Swal from 'sweetalert2';
-import { useState } from 'react';
+import Swal from "sweetalert2";
+import { useState } from "react";
 import "./style.css";
 
-const Page = () => {  // Changed from 'page' to 'Page'
+const Page = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
   });
 
   const handleChange = (e) => {
@@ -23,10 +23,10 @@ const Page = () => {  // Changed from 'page' to 'Page'
     e.preventDefault();
     console.log(formData);
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
     });
     Swal.fire({
       position: "top",
@@ -34,25 +34,27 @@ const Page = () => {  // Changed from 'page' to 'Page'
       title: "Your message has been sent successfully",
       showConfirmButton: false,
       timer: 1500,
-      background: "#9a9ae2",  // Set background color
+      background: "#9a9ae2", // Set background color
       customClass: {
-        title: 'white-text',  // Add custom class for title
-      }
+        title: "white-text", // Add custom class for title
+      },
     });
   };
 
   return (
-    <div 
+    <div
       style={{
         backgroundImage: `url(https://i.ibb.co.com/p238Htf/contactus.jpg)`,
-        backgroundSize: '100% 100%',
-        width: '99vw',
-        height: '100vh'
+        backgroundSize: "100% 100%",
+        width: "99vw",
+        height: "100vh"
       }}
       className="min-h-screen px-4 rounded-xl flex flex-col justify-center py-12 mt-6 md:mt-0 sm:px-6 lg:px-8 mb-24 md:mb-0"
     >
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="md:pt-0 text-center text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 uppercase">Contact Us</h2>
+        <h2 className="md:pt-0 text-center text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 uppercase">
+          Contact Us
+        </h2>
         <div className="sm:mt-3 md:mt-6 rounded-xl bg-[#9a9ae2] py-4 lg:py-8 px-4 lg:px-8 shadow sm:rounded-lg sm:px-10">
           <form onSubmit={handleSubmit} className="sm:space-y-1 lg:space-y-2">
             <div>
@@ -68,7 +70,7 @@ const Page = () => {  // Changed from 'page' to 'Page'
                 onChange={handleChange}
                 required
                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: '1.25rem', padding: '0.75rem' }}
+                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
               />
             </div>
             <div>
@@ -84,7 +86,7 @@ const Page = () => {  // Changed from 'page' to 'Page'
                 onChange={handleChange}
                 required
                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: '1.25rem', padding: '0.75rem' }}
+                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
               />
             </div>
             <div>
@@ -100,7 +102,7 @@ const Page = () => {  // Changed from 'page' to 'Page'
                 onChange={handleChange}
                 required
                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: '1rem', padding: '0.75rem' }}
+                style={{ fontSize: "1rem", padding: "0.75rem" }}
               />
             </div>
             <div>
@@ -115,7 +117,7 @@ const Page = () => {  // Changed from 'page' to 'Page'
                 onChange={handleChange}
                 required
                 className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: '1.25rem', padding: '0.75rem' }}
+                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
@@ -128,8 +130,12 @@ const Page = () => {  // Changed from 'page' to 'Page'
             </div>
           </form>
           <div className="mt-8 text-center">
-            <p className="text-sm text-gray-600 lg:font-semibold">For any inquiries, please feel free to contact us.</p>
-            <p className="text-sm text-gray-600 lg:font-semibold">We will get back to you as soon as possible.</p>
+            <p className="text-sm text-gray-600 lg:font-semibold">
+              For any inquiries, please feel free to contact us.
+            </p>
+            <p className="text-sm text-gray-600 lg:font-semibold">
+              We will get back to you as soon as possible.
+            </p>
           </div>
         </div>
       </div>
