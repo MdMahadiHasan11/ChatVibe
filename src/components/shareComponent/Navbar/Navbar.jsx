@@ -1,21 +1,21 @@
 import Link from "next/link";
 import React from "react";
 import MobileMenu from "./MobileMenu";
-
+import { IoNotifications } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 function Navbar() {
   return (
 
-    <nav className="bg-violet-700">
+    <nav className="text-[#1973e8]">
         <div className="flex justify-between items-center container mx-auto">
         <a href="/" className="text-center p-5 font-bold text-3xl text-blue-600">
-        Chat<span className="text-white">Vibe</span>
+        Chat<span className="">Vibe</span>
       </a>
 
-      {/* mobile menu */}
-    <MobileMenu/>
+  
 
       {/* desktop menu */}
-      <menu className="hidden md:flex items-center gap-20 text-gray-300 font-semibold mr-6">
+      <menu className="hidden md:flex items-center gap-20 text-[#827F7F] font-semibold mr-6">
         <ul className="flex gap-4">
           <li className="hover:text-blue-600 transition-all ">
             <Link href={"/"}>Home</Link>
@@ -30,16 +30,28 @@ function Navbar() {
             <Link href={"/pricing"}>Pricing</Link>
           </li>
         </ul>
-        <ul className="flex items-center gap-4">
-          <li className="bg-blue-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 hover:text-blue-100 hover:scale-105 transition-all">
-            <Link href={"/login"}>Log in</Link>
+
+      </menu>
+
+
+<div>
+<ul className=" hidden md:flex items-center gap-1 ">
+          {/* <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all">
+          <IoNotifications />
           </li>
-          <li className="bg-white text-blue-600 py-1 px-2 rounded-md hover:bg-slate-300 hover:text-blue-700 hover:scale-105 transition-all">
-            <Link href={"/sign-up"}>Sign Up</Link>
+          <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all">
+          <CgProfile />
+          </li> */}
+            <li className=" py-2  px-4 text-xl text-white rounded-md bg-blue-500 hover:text-white  hover:scale-105 transition-all">
+          <button>Login</button>
           </li>
         </ul>
-      </menu>
+</div>
+     {/* mobile menu */}
+     <MobileMenu />
         </div>
+
+       
    
     </nav>
   );

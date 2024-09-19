@@ -31,7 +31,7 @@ const page = () => {
     Swal.fire({
         position: "top",
         icon: "success",
-        title: "Your work has been saved",
+        title: "Your message has been sent successfully",
         showConfirmButton: false,
         timer: 1500,
         background: "#9a9ae2",  // Set background color
