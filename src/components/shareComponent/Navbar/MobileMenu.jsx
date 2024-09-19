@@ -4,17 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
 import { RiMenuUnfold2Line } from "react-icons/ri";
+import { IoNotifications } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 
 const MobileMenu = () => {
   const [display, setDisplay] = useState(false);
   return (
-    <menu className="md:hidden z-30">
+    <menu className="md:hidden z-30 mx-2">
       {/* Add flexbox and justify-end to align the button on the right */}
       
       <div className="flex justify-end">
         <button
           onClick={() => setDisplay(!display)}
-          className="bg-blue-600 font-bold text-xl text-white px-2 py-1 rounded-md"
+          className="bg-blue-600 font-bold mr-2 text-xl text-white px-2 py-1 rounded-md"
         >
           <RiMenuUnfold2Line />
         </button>
