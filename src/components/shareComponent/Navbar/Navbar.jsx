@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 function Navbar() {
   return (
 
-    <nav className="text-[#1973e8] border-b-1 shadow-lg border-black">
+    <nav className="text-[#1973e8] bg-[#d8e0fc80] border-b-2  border-black">
         <div className="flex justify-between items-center container mx-auto">
         <a href="/" className="text-center p-5 font-bold text-3xl text-blue-600">
         Chat<span className="">Vibe</span>
