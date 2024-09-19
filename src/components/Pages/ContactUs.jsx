@@ -7,6 +7,9 @@ const ContactUs = () => {
 
             <section>
                 add some things to
+
+                nothing
+
             </section>
         </div>
     );

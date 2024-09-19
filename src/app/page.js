@@ -1,11 +1,11 @@
-'use client'
-import Navbar from "@/components/shareComponent/Navbar";
+
+import Homepage from "@/components/Pages/Homepage/Homepage";
 import React from "react";
 
 function HomePage() {
   return (
     <div>
-      <h2 className="text-center text-red-500">home page design coming soon</h2>
+      <Homepage />
     </div>
   );
 }
