@@ -1,9 +1,9 @@
-"use client"
-import Swal from 'sweetalert2'
+"use client";
+import Swal from 'sweetalert2';
 import { useState } from 'react';
-import "./style.css"
+import "./style.css";
 
-const page = () => {
+const Page = () => {  // Changed from 'page' to 'Page'
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,20 +29,17 @@ const page = () => {
       message: ''
     });
     Swal.fire({
-        position: "top",
-        icon: "success",
-        title: "Your message has been sent successfully",
-        showConfirmButton: false,
-        timer: 1500,
-        background: "#9a9ae2",  // Set background color
-        customClass: {
-          title: 'white-text',  // Add custom class for title
-        }
-      });
-      
-      
+      position: "top",
+      icon: "success",
+      title: "Your message has been sent successfully",
+      showConfirmButton: false,
+      timer: 1500,
+      background: "#9a9ae2",  // Set background color
+      customClass: {
+        title: 'white-text',  // Add custom class for title
+      }
+    });
   };
-  
 
   return (
     <div 
@@ -54,10 +51,8 @@ const page = () => {
       }}
       className="min-h-screen px-4 rounded-xl flex flex-col justify-center py-12 mt-6 md:mt-0 sm:px-6 lg:px-8 mb-24 md:mb-0"
     >
-
-
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className=" md:pt-0 text-center text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 uppercase">Contact Us</h2>
+        <h2 className="md:pt-0 text-center text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 uppercase">Contact Us</h2>
         <div className="sm:mt-3 md:mt-6 rounded-xl bg-[#9a9ae2] py-4 lg:py-8 px-4 lg:px-8 shadow sm:rounded-lg sm:px-10">
           <form onSubmit={handleSubmit} className="sm:space-y-1 lg:space-y-2">
             <div>
@@ -92,7 +87,7 @@ const page = () => {
                 style={{ fontSize: '1.25rem', padding: '0.75rem' }}
               />
             </div>
-            <div className=''>
+            <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                 Phone number
               </label>
@@ -142,4 +137,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
