@@ -1,9 +1,8 @@
 import React from "react";
-import { ScaleLoader } from "react-spinners";
 function CommonLoadding() {
   return (
     <div className="text-center mt-16">
-      <ScaleLoader />
+      <p className="text-blue-600">Loadding.....</p>
     </div>
   );
 }
