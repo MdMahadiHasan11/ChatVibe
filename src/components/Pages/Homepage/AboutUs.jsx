@@ -12,37 +12,37 @@ const AboutUs = () => {
             src={"/images/mahadi.jpg"}
             name={"Md Mahadi Hasan"}
             profession={"Web Developer"}
-            role={"Team Leader"}
+            role={"Team Leader/Developer"}
           />
           <Member
             src={"/images/sarajit.jpg"}
             name={"Sarajit Mandal"}
             profession={"Web Developer"}
-            role={"Leader"}
+            role={"Ui Ux Lead/Developer"}
           />
           <Member
             src={"/images/asrafulislam.jpg"}
             name={"Ashraful Islam"}
             profession={"Web Developer"}
-            role={"Leader"}
+            role={"Progmmer/Developer"}
           />
           <Member
             src={"/images/shamim.jpg"}
             name={"Md Shamim"}
             profession={"Web Developer"}
-            role={"Leader"}
+            role={"Progmmer/Developer"}
           />
           <Member
             src={"/images/nasim.jpg"}
             name={"Nasim Mondol"}
             profession={"Web Developer"}
-            role={"Leader"}
+            role={"Programmer/Developer"}
           />
           <Member
             src={"/images/atikuzzaman.png"}
             name={"Md Atikuzzaman"}
             profession={"Web Developer"}
-            role={"Leader"}
+            role={"Developer/Ui Designer"}
           />
         </div>
       </div>
