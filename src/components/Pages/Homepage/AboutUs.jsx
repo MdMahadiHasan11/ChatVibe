@@ -3,7 +3,7 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#e2e7fc] pt-8 px-6">
+    <div className="bg-[#e2e7fc] pt-8 px-6" id='#about'>
       <div className="text-center">
         <h2 className="text-4xl font-bold text-[#3b82f6]">About Us</h2>
         <p className="text-xl font-semibold">Meet out team members</p>
