@@ -2,7 +2,7 @@ import React from 'react';
 
 const page = () => {
     return (
-<section className="mt-10 md:mt-20">
+<section className="pt-10 bg-[#e2e7fc]">
     <div className="container mx-auto p-6 overflow-x-auto">
         <table className="w-full">
             <caption className="sr-only">Pricing plan comparison</caption>

@@ -19,19 +19,19 @@ const Footer = () => {
                 <div className="flex flex-col justify-center pt-6 lg:pt-0">
                     <div className="flex justify-center space-x-4">
                         <a rel="noopener noreferrer" href="#" title="Instagram" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-600 dark:text-gray-50">
-                            <FaInstagram className="w-8 h-8" style={{ color: '#E1306C' }} /> {/* Instagram color */}
+                            <FaInstagram className="md:w-8 md:h-8 w-6 h-6" style={{ color: '#E1306C' }} /> {/* Instagram color */}
                         </a>
                         <a rel="noopener noreferrer" href="#" title="Pinterest" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-600 dark:text-gray-50">
-                            <FaPinterest className="w-8 h-8" style={{ color: '#E60023' }} /> {/* Pinterest color */}
+                            <FaPinterest className="md:w-8 md:h-8 w-6 h-6" style={{ color: '#E60023' }} /> {/* Pinterest color */}
                         </a>
                         <a rel="noopener noreferrer" href="#" title="Twitter" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-600 dark:text-gray-50">
-                            <FaTwitter className="w-8 h-8" style={{ color: '#1DA1F2' }} /> {/* Twitter color */}
+                            <FaTwitter className="md:w-8 md:h-8 w-6 h-6" style={{ color: '#1DA1F2' }} /> {/* Twitter color */}
                         </a>
                         <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-600 dark:text-gray-50">
-                            <FaFacebook className="w-8 h-8" style={{ color: '#1877F2' }} /> {/* Facebook color */}
+                            <FaFacebook className="md:w-8 md:h-8 w-6 h-6" style={{ color: '#1877F2' }} /> {/* Facebook color */}
                         </a>
                         <a rel="noopener noreferrer" href="#" title="Gmail" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-600 dark:text-gray-50">
-                            <FaGoogle className="w-8 h-8" style={{ color: '#DB4437' }} /> {/* Google color */}
+                            <FaGoogle className="md:w-8 md:h-8 w-6 h-6" style={{ color: '#DB4437' }} /> {/* Google color */}
                         </a>
                     </div>
                 </div>

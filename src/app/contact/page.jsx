@@ -34,9 +34,9 @@ const Page = () => {
       title: "Your message has been sent successfully",
       showConfirmButton: false,
       timer: 1500,
-      background: "#9a9ae2", // Set background color
+      background: "#9a9ae2",
       customClass: {
-        title: "white-text", // Add custom class for title
+        title: "white-text",
       },
     });
   };
@@ -44,19 +44,41 @@ const Page = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/p238Htf/contactus.jpg)`,
-        backgroundSize: "100% 100%",
-        width: "99vw",
-        height: "100vh"
+        backgroundImage: `url(https://i.ibb.co/p238Htf/contactus.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100vw",
+        height: "100vh",
+        position: "relative",
       }}
-      className="min-h-screen px-4 rounded-xl flex flex-col justify-center py-12 mt-6 md:mt-0 sm:px-6 lg:px-8 mb-24 md:mb-0"
+      className="flex justify-center items-center px-4"
     >
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="md:pt-0 text-center text-3xl md:text-4xl lg:text-4xl font-extrabold text-gray-900 uppercase">
-          Contact Us
-        </h2>
-        <div className="sm:mt-3 md:mt-6 rounded-xl bg-[#9a9ae2] py-4 lg:py-8 px-4 lg:px-8 shadow sm:rounded-lg sm:px-10">
-          <form onSubmit={handleSubmit} className="sm:space-y-1 lg:space-y-2">
+      <div
+        style={{
+          background: "linear-gradient(135deg, #e2e7fc 0%, #e2fcf5 100%)",
+          opacity: 0.85,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 1,
+        }}
+        className="dynamic-background"
+      ></div>
+
+      <div style={{ zIndex: 2 }} className="relative">
+        <div
+          className="sm:w-full max-w-full rounded-xl py-2 px-8 shadow-md mx-4 md:mx-6 lg:mx-12"
+          style={{ 
+            background: "linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%)", // Smooth gradient background
+            transition: "background-color 0.5s ease" // Smooth transition for color changes
+          }}
+        >
+          <h2 className="text-center text-2xl md:text-3xl font-extrabold text-gray-900 uppercase mb-4">
+            Contact Us
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                 Name
@@ -69,8 +91,7 @@ const Page = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
+                className="mt-1 block w-full sm:text-base border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 p-2.5"
               />
             </div>
             <div>
@@ -85,8 +106,7 @@ const Page = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
+                className="mt-1 block w-full sm:text-base border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 p-2.5"
               />
             </div>
             <div>
@@ -101,8 +121,7 @@ const Page = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: "1rem", padding: "0.75rem" }}
+                className="mt-1 block w-full sm:text-base border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 p-2.5"
               />
             </div>
             <div>
@@ -116,24 +135,23 @@ const Page = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                style={{ fontSize: "1.25rem", padding: "0.75rem" }}
+                className="mt-1 block w-full sm:text-base border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 p-2.5"
               ></textarea>
             </div>
             <div className="flex items-center justify-center">
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full py-2.5 px-4 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Submit
               </button>
             </div>
           </form>
-          <div className="mt-8 text-center">
-            <p className="text-sm text-gray-600 lg:font-semibold">
+          <div className="mt-6 text-center">
+            <p className="text-xs text-gray-600 lg:font-semibold">
               For any inquiries, please feel free to contact us.
             </p>
-            <p className="text-sm text-gray-600 lg:font-semibold">
+            <p className="text-xs text-gray-600 lg:font-semibold">
               We will get back to you as soon as possible.
             </p>
           </div>
