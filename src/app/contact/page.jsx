@@ -8,14 +8,15 @@ const Page = () => {
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
+    console.log(namddasdfsadfsdf);
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -26,7 +27,7 @@ const Page = () => {
       name: "",
       email: "",
       phone: "",
-      message: ""
+      message: "",
     });
     Swal.fire({
       position: "top",
@@ -70,9 +71,9 @@ const Page = () => {
       <div style={{ zIndex: 2 }} className="relative">
         <div
           className="sm:w-full max-w-full rounded-xl py-2 px-8 shadow-md mx-4 md:mx-6 lg:mx-12"
-          style={{ 
+          style={{
             background: "linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%)", // Smooth gradient background
-            transition: "background-color 0.5s ease" // Smooth transition for color changes
+            transition: "background-color 0.5s ease", // Smooth transition for color changes
           }}
         >
           <h2 className="text-center text-2xl md:text-3xl font-extrabold text-gray-900 uppercase mb-4">
@@ -80,7 +81,10 @@ const Page = () => {
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Name
               </label>
               <input
@@ -95,7 +99,10 @@ const Page = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Email address
               </label>
               <input
@@ -110,7 +117,10 @@ const Page = () => {
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="phone"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Phone number
               </label>
               <input
@@ -125,7 +135,10 @@ const Page = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Message
               </label>
               <textarea

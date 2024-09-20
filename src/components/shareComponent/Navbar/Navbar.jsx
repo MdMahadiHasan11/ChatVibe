@@ -5,38 +5,57 @@ import { IoNotifications } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { useState } from "react";
 import Profile from "./Profile";
+import { usePathname } from "next/navigation";
 function Navbar() {
+  const pathName = usePathname();
   const [isDropDown, setIsDropDown] = useState();
   // Function to handle the dropdown toggle
   const toggleDropdown = () => {
     setIsDropDown(!isDropDown);
   };
-
+  // path name or path define
+  const pageLink = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "About",
+      path: "/about",
+    },
+    {
+      name: "ContactUs",
+      path: "/contact",
+    },
+    {
+      name: "Pricing",
+      path: "/pricing",
+    },
+  ];
   return (
     <nav className="text-[#1973e8] bg-[#d8e0fc80] border-b-2  border-black">
       <div className="flex justify-between items-center container mx-auto">
-        <a
+        <Link
           href="/"
           className="text-center p-5 font-bold text-3xl text-blue-600"
         >
           Chat<span className="">Vibe</span>
-        </a>
+        </Link>
 
         {/* desktop menu */}
         <menu className="hidden md:flex items-center gap-20 text-[#827F7F] font-semibold mr-6">
           <ul className="flex gap-4">
-            <li className="hover:text-blue-600 transition-all ">
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li className="hover:text-blue-600 transition-all ">
-              <Link href={"/about"}>About</Link>
-            </li>
-            <li className="hover:text-blue-600 transition-all ">
-              <Link href={"/contact"}>ContactUs</Link>
-            </li>
-            <li className="hover:text-blue-600 transition-all ">
-              <Link href={"/pricing"}>Pricing</Link>
-            </li>
+            {pageLink &&
+              pageLink.map((page, inx) => (
+                <li
+                  key={inx}
+                  className={`${
+                    pathName === page.path && "font-bold text-blue-600"
+                  } hover:text-blue-600 transition-all`}
+                >
+                  <Link href={page.path}>{page.name}</Link>
+                </li>
+              ))}
           </ul>
         </menu>
 
