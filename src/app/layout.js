@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         <div className="min-h-[calc(100vh-280px)]">
         {children}
         </div>
-          {/* <Footer></Footer> */}
+          <Footer></Footer>
         </main>
       </body>
     </html>
