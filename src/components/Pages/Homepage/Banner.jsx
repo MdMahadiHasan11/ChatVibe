@@ -44,7 +44,7 @@ const Banner = () => {
           {/* Left Section - Text and Buttons */}
           <div className='flex-1 h-full flex flex-col justify-center text-left md:p-4 lg:p-4 lg:mr-4 space-y-4 lg:space-y-6'>
             <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>
-              Meeting and Video call for everyone <br /> with{" "}
+              Meeting and Video call for everyone <br /><strong>with </strong>
               <span className='text-blue-500'>ChatVibe</span>
             </h1>
 
@@ -56,7 +56,7 @@ const Banner = () => {
               
                 <input onChange={(e)=>setMeetingLink(e.target.value)} type="text" placeholder="Enter a Link" className="className='border border-gray-400 p-2 rounded-lg hover:bg-gray-200 transition duration-300'" />
             
-                <button type="submit" className={`bg-blue-500 text-white py-2 px-4 rounded-lg  transition duration-300 block ${!meetingLink && "bg-gray-300"}`} disabled={!meetingLink}>Join</button>
+                <button type="submit" className={`bg-blue-500 text-white py-2 px-4  rounded-lg  transition duration-300 block ${!meetingLink && "bg-gray-300"}`} disabled={!meetingLink}>Join</button>
               
             </div>
 

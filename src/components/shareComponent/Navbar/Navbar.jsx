@@ -33,7 +33,7 @@ function Navbar() {
     },
   ];
   return (
-    <nav className='bg-[#d8e0fc80] border-b-2  border-black'>
+    <nav  className='bg-[#d8e0fc80] border-b-2  border-black'>
       <div className='flex justify-between items-center container mx-auto'>
         <Link
           href='/'
@@ -46,7 +46,7 @@ function Navbar() {
           <ul className='flex gap-4'>
             {pageLink &&
               pageLink?.map((page, inx) => (
-                <li
+                <li onClick={()=>setIsDropDown(false)}
                   key={inx}
                   className={`${
                     pathName === page?.path && "font-bold text-blue-600"
@@ -71,7 +71,7 @@ function Navbar() {
             </div>
 
             <li className=' py-1  px-3 text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all'>
-              <button>Login</button>
+             <Link href={'/signup'}> <button>SignUp</button></Link>
             </li>
           </ul>
         </div>
