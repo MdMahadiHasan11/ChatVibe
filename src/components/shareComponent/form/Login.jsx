@@ -62,7 +62,13 @@ export default function Login() {
           Log In
           </button>
         </form>
-
+ {/* Redirect to signUp */}
+ <p className="text-xs text-center text-gray-500 mt-4">
+          Already have an account?{" "}
+          <Link href="/signup" className="underline text-blue-500">
+            SignUp
+          </Link>
+    </p>
         {/* Privacy & Terms */}
         <p className="text-xs text-center text-gray-500 mt-4">
           By signing in, you agree to the charitable{" "}
