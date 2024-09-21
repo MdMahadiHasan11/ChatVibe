@@ -20,16 +20,16 @@ function Navbar() {
       path: "/",
     },
     {
+      name: "Pricing",
+      path: "/pricing",
+    },
+    {
       name: "About",
       path: "/about",
     },
     {
       name: "ContactUs",
       path: "/contact",
-    },
-    {
-      name: "Pricing",
-      path: "/pricing",
     },
   ];
   return (
