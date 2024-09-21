@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/shareComponent/Footer";
 import Navbar from "@/components/shareComponent/Navbar/Navbar";
+import Container from "@/components/shareComponent/Container";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
           <Navbar></Navbar>
         </header>
         <main className='mx-auto bg-[#e2e7fc]'>
-          <div className='min-h-[calc(100vh-280px)]'>{children}</div>
+          <Container>
+            <div className='min-h-[calc(100vh-280px)] py-12'>{children}</div>
+          </Container>
         </main>
         <Footer></Footer>
       </body>

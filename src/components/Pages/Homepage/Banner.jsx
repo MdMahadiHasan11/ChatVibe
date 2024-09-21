@@ -1,4 +1,5 @@
 "use client";
+import SectionContainer from "@/components/shareComponent/SectionContainer";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
@@ -36,8 +37,8 @@ const Banner = () => {
 
   return (
     <div className='overflow-x-hidden overflow-y-hidden'>
-      <div className='h-screen pb-8 bg-[#e2e7fc] p-3 flex items-center justify-center'>
-        <div className='flex flex-col lg:flex-row items-center justify-between w-full h-full max-w-8xl'>
+      <SectionContainer>
+        <div className='flex flex-col-reverse md:flex-row items-center justify-between w-full h-full max-w-8xl'>
           {/* Left Section - Text and Buttons */}
           <div className='flex-1 h-full flex flex-col justify-center text-left p-4 lg:p-8 lg:mr-8 space-y-4 lg:space-y-6'>
             <h1 className='text-3xl md:text-5xl lg:text-5xl font-bold mb-4'>
@@ -69,7 +70,7 @@ const Banner = () => {
           </div>
 
           {/* Right Section - Auto-Sliding Image/Slider */}
-          <div className='flex-1 h-[520px] max-w-full md:max-w-[620px] pb-12 lg:max-w-[720px] lg:ml-8'>
+          <div className='flex-1 h-[500px] max-w-full md:max-w-[620px] pb-12 lg:max-w-[720px] lg:ml-8'>
             <div className='bg-[#d9d9d9] p-6 rounded-lg shadow-lg h-full flex flex-col justify-center space-y-4'>
               <Image
                 width={208}
@@ -129,7 +130,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      </div>
+      </SectionContainer>
     </div>
   );
 };
