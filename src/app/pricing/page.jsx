@@ -17,11 +17,11 @@ const page = () => {
                   <span className='text-2xl font-bold sm:text-4xl dark:text-gray-900'>
                     0$
                   </span>
-                  <span className='font-medium dark:text-gray-600'>/mo</span>
+                  <span className='font-medium dark:text-gray-600'>/mon</span>
                 </p>
                 <button
                   disabled
-                  className='px-6 py-2 bg-violet-600 text-white rounded-lg shadow hover:bg-violet-700 transition-colors duration-300'>
+                  className='px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-700 transition-colors duration-300'>
                   Free
                 </button>
               </th>
@@ -33,9 +33,9 @@ const page = () => {
                   <span className='text-2xl font-bold sm:text-4xl dark:text-gray-900'>
                     19$
                   </span>
-                  <span className='font-medium dark:text-gray-600'>/mo</span>
+                  <span className='font-medium dark:text-gray-600'>/mon</span>
                 </p>
-                <button className='px-4 py-2 bg-violet-600 text-white rounded-lg shadow hover:bg-violet-700 transition-colors duration-300'>
+                <button className='px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-700 transition-colors duration-300'>
                   Buy Now
                 </button>
               </th>
@@ -47,9 +47,9 @@ const page = () => {
                   <span className='text-2xl font-bold sm:text-4xl dark:text-gray-900'>
                     49$
                   </span>
-                  <span className='font-medium dark:text-gray-600'>/mo</span>
+                  <span className='font-medium dark:text-gray-600'>/mon</span>
                 </p>
-                <button className='px-4 py-2 bg-violet-600 text-white rounded-lg shadow hover:bg-violet-700 transition-colors duration-300'>
+                <button className='px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-700 transition-colors duration-300'>
                   Buy Now
                 </button>
               </th>

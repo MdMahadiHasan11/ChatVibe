@@ -7,7 +7,7 @@ const AboutUs = () => {
       <div className="text-center">
         <h2 className="text-4xl font-bold text-[#3b82f6]">About Us</h2>
         <p className="text-xl font-semibold">Meet out team members</p>
-        <div className="py-8 grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+        <div className="py-8 grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-6">
           <Member
             src={"/images/mahadi.jpg"}
             name={"Md Mahadi Hasan"}
@@ -34,7 +34,7 @@ const AboutUs = () => {
           />
           <Member
             src={"/images/nasim.jpg"}
-            name={"Nasim Mondol"}
+            name={"Md. Nasim Mondal"}
             profession={"Web Developer"}
             role={"Programmer/Developer"}
           />
