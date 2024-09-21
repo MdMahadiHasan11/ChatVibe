@@ -2,10 +2,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
-import { FaEyeSlash,FaEye } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 
-
-export default function Login() {
+export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -15,8 +14,21 @@ export default function Login() {
   return (
     <div className="flex justify-center items-center h-3/4 ">
       <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-sm">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Log In</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
         <form>
+          {/* Name Input */}
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700">
+              Enter Your Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter Your Name"
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
           {/* Email Input */}
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700">
@@ -46,32 +58,21 @@ export default function Login() {
               className="absolute right-2 top-10 text-blue-600"
               onClick={togglePasswordVisibility}
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye/>}
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
 
-          {/* Forget Password */}
-          <div className="text-right mb-6">
-            <Link href="#" className="text-blue-500 hover:underline">
-              Forget Password?
-            </Link>
-          </div>
-
-          {/* Sign In Button */}
+          {/* Sign Up Button */}
           <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors">
-          Log In
+            Sign Up
           </button>
         </form>
 
-        {/* Privacy & Terms */}
+        {/* Redirect to Login */}
         <p className="text-xs text-center text-gray-500 mt-4">
-          By signing in, you agree to the charitable{" "}
-          <Link href="#" className="underline text-blue-500">
-            Privacy Statement
-          </Link>{" "}
-          and{" "}
-          <Link href="#" className="underline text-blue-500">
-            Terms of Service
+          Already have an account?{" "}
+          <Link href="/login" className="underline text-blue-500">
+            Log In
           </Link>
         </p>
 
