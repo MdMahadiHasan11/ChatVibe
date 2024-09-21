@@ -14,8 +14,10 @@ const MobileMenu = () => {
     setIsDropDown(!isDropDown);
   };
   const [display, setDisplay] = useState(false);
+  // menu show off on
   const displayOnOff = () => {
     setDisplay(!display);
+    // profile set flase
     setIsDropDown(false);
   };
   return (
@@ -67,6 +69,7 @@ const MobileMenu = () => {
         >
           <Link href="/pricing">Pricing</Link>
         </li>
+        {/* profile dropdown */}
         {/* profile dropdown */}
         <div onClick={toggleDropdown}>
           <li className="md:hover:text-blue-300 px-6 transition-all mt-2 cursor-pointer ">
