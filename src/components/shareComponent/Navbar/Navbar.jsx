@@ -71,7 +71,7 @@ function Navbar() {
             </div>
 
             <li className=' py-1  px-3 text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all'>
-              <button>Login</button>
+             <Link href={'/login'}> <button>Login</button></Link>
             </li>
           </ul>
         </div>
