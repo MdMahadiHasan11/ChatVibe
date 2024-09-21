@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 
 const Banner = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  // meeting link
+  const [meetingLink,setMeetingLink] = useState("")
   const slides = [
     {
       text: "Get a Link You can share",
@@ -40,24 +42,22 @@ const Banner = () => {
       <SectionContainer>
         <div className='flex flex-col-reverse md:flex-row items-center justify-between w-full h-full max-w-8xl'>
           {/* Left Section - Text and Buttons */}
-          <div className='flex-1 h-full flex flex-col justify-center text-left p-4 lg:p-8 lg:mr-8 space-y-4 lg:space-y-6'>
-            <h1 className='text-3xl md:text-5xl lg:text-5xl font-bold mb-4'>
-              Meeting and Video call for <br /> everyone with{" "}
+          <div className='flex-1 h-full flex flex-col justify-center text-left md:p-4 lg:p-4 lg:mr-4 space-y-4 lg:space-y-6'>
+            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>
+              Meeting and Video call for everyone <br /> with{" "}
               <span className='text-blue-500'>ChatVibe</span>
             </h1>
 
-            <div className='relative flex flex-col  lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 justify-center lg:justify-start'>
-              <button className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300'>
+            <div className='flex flex-col gap-4 md:flex-row space-x-3'>
+              <button className='bg-blue-500 text-white p-2 md:py-2 md:px-4 rounded-lg hover:bg-blue-600 transition duration-300'>
                 New Meeting
               </button>
 
-              <button className='border border-gray-400 py-2 px-4 rounded-lg hover:bg-gray-200 transition duration-300'>
-                Enter a Link
-              </button>
-
-              <button className='absolute right-2 bottom-1 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 block sm:hidden'>
-                Join
-              </button>
+              
+                <input onChange={(e)=>setMeetingLink(e.target.value)} type="text" placeholder="Enter a Link" className="className='border border-gray-400 p-2 rounded-lg hover:bg-gray-200 transition duration-300'" />
+            
+                <button type="submit" className={`bg-blue-500 text-white py-2 px-4 rounded-lg  transition duration-300 block ${!meetingLink && "bg-gray-300"}`} disabled={!meetingLink}>Join</button>
+              
             </div>
 
             <p className='mt-10 text-gray-500'>
