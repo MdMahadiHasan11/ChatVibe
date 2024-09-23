@@ -2,23 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { CgProfile } from "react-icons/cg";
 import { ImCross } from "react-icons/im";
 import { RiMenuUnfold2Line } from "react-icons/ri";
-import Profile from "./Profile";
 
 const MobileMenu = () => {
-  const [isDropDown, setIsDropDown] = useState();
-  // Function to handle the dropdown toggle
-  const toggleDropdown = () => {
-    setIsDropDown(!isDropDown);
-  };
   const [display, setDisplay] = useState(false);
   // menu show off on
   const displayOnOff = () => {
     setDisplay(!display);
-    // profile set flase
-    setIsDropDown(false);
   };
   return (
     <menu className="md:hidden z-30 h-full">
@@ -69,14 +60,7 @@ const MobileMenu = () => {
         >
           <Link href="/pricing">Pricing</Link>
         </li>
-        {/* profile dropdown */}
-        {/* profile dropdown */}
-        <div onClick={toggleDropdown}>
-          <li className="md:hover:text-blue-300 px-6 transition-all mt-2 cursor-pointer ">
-            {!isDropDown && <CgProfile className="text-2xl mx-auto" />}
-          </li>
-          {isDropDown && <Profile />}
-        </div>
+
         <hr className="mt-5" />
         <li className="py-2 mt-5 px-4 bg-blue-700 border-0 mx-4 text-white rounded-md hover:text-white hover:scale-105 transition-all text-center">
           <button>Login</button>

@@ -62,15 +62,18 @@ function Navbar() {
         </menu>
 
         <div>
-          <ul className=" hidden md:flex items-center gap-[6px] ">
-            <li className=" py-1 px-2 relative text-2xl text-gray-600 rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
+          <ul className="flex items-center gap-[6px] ">
+            <li
+              onClick={() => setIsDropDown(false)}
+              className=" py-1 px-2 relative text-2xl text-gray-600 rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer"
+            >
               <IoNotifications />
               <span className="bg-red-500 rounded-full size-4  text-[12px] font-bold absolute -top-1 left-5 flex justify-center items-center text-white">
                 3
               </span>
             </li>
             {/* chat Icon */}
-            {/* <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
+            {/* <li onClick={() => setIsDropDown(false)} className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
               <BsChatSquareText />
             </li> */}
             {/* profile dropdown */}
@@ -81,16 +84,18 @@ function Navbar() {
               {isDropDown && <Profile />}
             </div>
 
-            <li className=" py-1  px-3 text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all">
+            <li className=" text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all">
               <Link href={"/signup"}>
                 {" "}
-                <button>SignUp</button>
+                <button className="text-[16px] px-1 font-bold">SignUp</button>
               </Link>
             </li>
+            {/* mobile menu */}
+            <div onClick={() => setIsDropDown(false)}>
+              <MobileMenu />
+            </div>
           </ul>
         </div>
-        {/* mobile menu */}
-        <MobileMenu />
       </div>
     </nav>
   );
