@@ -63,13 +63,16 @@ function Navbar() {
 
         <div>
           <ul className=" hidden md:flex items-center gap-[6px] ">
-            <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
+            <li className=" py-1 px-2 relative text-2xl text-gray-600 rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
               <IoNotifications />
+              <span className="bg-red-500 rounded-full size-4  text-[12px] font-bold absolute -top-1 left-5 flex justify-center items-center text-white">
+                3
+              </span>
             </li>
             {/* chat Icon */}
-            <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
+            {/* <li className=" py-1 px-2 text-2xl text-black rounded-md hover:bg-blue-500 hover:text-white  hover:scale-105 transition-all cursor-pointer">
               <BsChatSquareText />
-            </li>
+            </li> */}
             {/* profile dropdown */}
             <div onClick={toggleDropdown}>
               <li className=" py-1 px-2 text-2xl bg-blue-500 rounded-md hover:bg-blue-600 text-white  hover:scale-105 transition-all cursor-pointer">
