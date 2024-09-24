@@ -85,7 +85,7 @@ function Navbar() {
             </div>
 
             <li className=" text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all">
-              <Link href={"/signup"}>
+              <Link href={"/api/auth/signup"}>
                 {" "}
                 <button className="text-[16px] px-1 font-bold">SignUp</button>
               </Link>

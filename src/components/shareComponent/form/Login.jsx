@@ -102,7 +102,7 @@ export default function Login() {
         {/* Redirect to Sign Up */}
         <p className="text-xs text-center text-gray-500 mt-4">
           Don’t have an account?{" "}
-          <Link href="/signup" className="underline text-blue-500">
+          <Link href="/api/auth/signup" className="underline text-blue-500">
             Sign Up
           </Link>
         </p>

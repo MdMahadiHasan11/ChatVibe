@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,8 +17,14 @@ export default function SignUp() {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // Handle form submission logic here, such as sending data to a server
+    // console.log(data);
+    // const res = await axios("http://localhost:3000/api/auth/signup/new-user", {
+    //   data,
+    // });
+
+    // console.log(res);
     console.log(data);
   };
 
@@ -120,7 +127,7 @@ export default function SignUp() {
         {/* Redirect to Login */}
         <p className="text-xs text-center text-gray-500 mt-4">
           Already have an account?{" "}
-          <Link href="/login" className="underline text-blue-500">
+          <Link href="/api/auth//login" className="underline text-blue-500">
             Log In
           </Link>
         </p>
