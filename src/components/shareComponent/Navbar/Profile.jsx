@@ -13,7 +13,7 @@ import {
 function Profile({ setIsDropDown }) {
   return (
     <div>
-      <ul className="md:absolute right-0 mt-2 p-2 md:w-64  md:bg-white bg-transparent shadow-lg rounded-lg z-50 animate__animated animate__fadeInDown">
+      <ul className="absolute right-0 mt-6 p-2 md:w-64  bg-white bg-transparent shadow-lg rounded-lg z-50 animate__animated animate__fadeInDown border-2">
         {/* Profile Header */}
         <li className="p-4 text-center border-b">
           <Image
