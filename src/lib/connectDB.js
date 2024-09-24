@@ -10,7 +10,7 @@ const connectDB = async () => {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-      },
+      }
     });
     db = client.db("ChatVibe");
     return db;
