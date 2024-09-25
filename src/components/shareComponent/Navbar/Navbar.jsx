@@ -7,7 +7,10 @@ import { CgProfile } from "react-icons/cg";
 import { useState } from "react";
 import Profile from "./Profile";
 import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 function Navbar() {
+  const session = useSession();
+  console.log("sectiondata", session);
   const pathName = usePathname();
   const [isDropDown, setIsDropDown] = useState();
   // Function to handle the dropdown toggle
@@ -77,19 +80,22 @@ function Navbar() {
               <BsChatSquareText />
             </li> */}
             {/* profile dropdown */}
-            <div onClick={toggleDropdown}>
-              <li className=" py-1 px-2 text-2xl bg-blue-500 rounded-md hover:bg-blue-600 text-white  hover:scale-105 transition-all cursor-pointer">
-                <CgProfile />
+            {session.data?.user ? (
+              <div onClick={toggleDropdown}>
+                <li className=" py-1 px-2 text-2xl bg-blue-500 rounded-md hover:bg-blue-600 text-white  hover:scale-105 transition-all cursor-pointer">
+                  <CgProfile />
+                </li>
+                {isDropDown && <Profile />}
+              </div>
+            ) : (
+              <li className=" text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all">
+                <Link href={"/api/auth/signup"}>
+                  {" "}
+                  <button className="text-[16px] px-1 font-bold">SignUp</button>
+                </Link>
               </li>
-              {isDropDown && <Profile />}
-            </div>
+            )}
 
-            <li className=" text-xl text-white rounded-md bg-blue-500 hover:bg-blue-600 hover:text-white  hover:scale-105 transition-all">
-              <Link href={"/api/auth/signup"}>
-                {" "}
-                <button className="text-[16px] px-1 font-bold">SignUp</button>
-              </Link>
-            </li>
             {/* mobile menu */}
             <div onClick={() => setIsDropDown(false)}>
               <MobileMenu />

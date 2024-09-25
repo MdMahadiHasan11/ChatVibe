@@ -1,11 +1,15 @@
 "use client";
 import axios from "axios";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
 
 export default function SignUp() {
+  const route = useRouter();
   const {
     register,
     handleSubmit,
@@ -27,8 +31,29 @@ export default function SignUp() {
         "http://localhost:3000/api/auth/signup/new-user",
         data
       );
-
-      console.log(res);
+      if (res.status === 200) {
+        const email = data.email;
+        const password = data.password;
+        // SignUp after login
+        try {
+          const resp = await signIn("credentials", {
+            email,
+            password,
+            redirect: false,
+          });
+          // toast
+          if (resp.error) {
+            toast.error(resp.error);
+          } else {
+            route.push("/");
+            toast.success("SignUp Successfully");
+          }
+        } catch (error) {
+          console.log("error", error);
+        }
+      } else {
+        toast.error(res.data.message);
+      }
     } catch (error) {
       console.log(error);
     }

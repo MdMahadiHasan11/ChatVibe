@@ -9,7 +9,7 @@ export const POST = async (resques) => {
     // already user have or not
     const exist = await userCollection.findOne({ email: newUser.email });
     if (exist) {
-      return Response.json({ message: "user Exists" });
+      return Response.json({ message: "user Exists" }, { status: 201 });
     }
     //password set
     const bcryptPassword = bcrypt.hashSync(newUser.password, 14);

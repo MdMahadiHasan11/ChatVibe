@@ -4,8 +4,11 @@ import { useForm } from "react-hook-form";
 import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const route = useRouter();
   const {
     register,
     handleSubmit,
@@ -19,14 +22,24 @@ export default function Login() {
 
   const onSubmit = async (data) => {
     // Handle form submission, e.g., send data to server
-
+    const email = data.email;
+    const password = data.password;
     try {
       const resp = await signIn("credentials", {
-        data,
+        email,
+        password,
         redirect: false,
       });
-      console.log(resp);
-    } catch (error) {}
+      // toast
+      if (resp.error) {
+        toast.error(resp.error);
+      } else {
+        toast.success("Login Successfully");
+        route.push("/");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
   };
 
   return (

@@ -15,19 +15,20 @@ const handler = NextAuth({
         password: {},
       },
       async authorize(credentials) {
-        const { email, password } = credentials.data;
+        const { email, password } = credentials;
+
         // check email or password ture
         if (!email || !password) {
-          return Response.json(
-            { message: "email or password not match" },
-            { status: 401 }
-          );
+          return null;
         }
 
         // database collaction
         const db = await connectDB();
         // check already user have
-        const currentUser = db.collection("users").findOne({ email });
+        const currentUser = await db.collection("users").findOne({ email });
+        if (!currentUser) {
+          throw new Error("No user found with the email");
+        }
 
         const passwordMatched = bcrypt.compareSync(
           password,
@@ -35,13 +36,11 @@ const handler = NextAuth({
         );
 
         if (!passwordMatched) {
-          return Response.json(
-            { message: "email or password not match" },
-            { status: 401 }
-          );
+          console.log(passwordMatched);
+          throw new Error("Invalid password");
         }
-
-        return currentUser;
+        console.log(passwordMatched);
+        return { currentUser };
       },
     }),
   ],

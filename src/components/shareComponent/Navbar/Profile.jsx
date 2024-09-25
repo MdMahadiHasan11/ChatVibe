@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -11,6 +12,8 @@ import {
 } from "react-icons/fa";
 
 function Profile({ setIsDropDown }) {
+  const session = useSession();
+
   return (
     <div>
       <ul className="absolute right-0 mt-6 p-2 md:w-64  bg-white bg-transparent shadow-lg rounded-lg z-50 animate__animated animate__fadeInDown border-2">
@@ -24,7 +27,9 @@ function Profile({ setIsDropDown }) {
             className="rounded-full mx-auto"
           ></Image>
 
-          <h3 className="mt-2 font-bold">user Name</h3>
+          <h3 className="mt-2 font-bold">
+            {session.data?.user?.name || "User Name"}
+          </h3>
         </li>
 
         {/* Menu Items */}
