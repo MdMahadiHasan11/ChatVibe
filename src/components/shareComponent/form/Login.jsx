@@ -1,10 +1,16 @@
 "use client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import SocialLogin from "./SocialLogin";
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
+  const route = useRouter();
   const {
     register,
     handleSubmit,
@@ -16,9 +22,30 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // Handle form submission, e.g., send data to server
-    console.log(data);
+    setLoading(true);
+    const email = data.email;
+    const password = data.password;
+    try {
+      const resp = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+      // toast
+      if (resp.error) {
+        toast.error(resp.error);
+        setLoading(false);
+      } else {
+        toast.success("Login Successfully");
+        route.push("/");
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log("error", error);
+      setLoading(false);
+    }
   };
 
   return (
@@ -92,10 +119,11 @@ export default function Login() {
 
           {/* Sign In Button */}
           <button
+            disabled={loading}
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
           >
-            Log In
+            {loading ? "Loading......" : "Log In"}
           </button>
         </form>
 
@@ -120,14 +148,7 @@ export default function Login() {
         </p>
 
         {/* Social Logins */}
-        <div className="flex justify-center items-center space-x-4 mt-6">
-          <button className="text-orange-600 hover:text-blue-500">
-            <FaGoogle size={30} />
-          </button>
-          <button className="text-blue-600 hover:text-blue-600">
-            <FaFacebook size={30} />
-          </button>
-        </div>
+        <SocialLogin />
       </div>
     </div>
   );

@@ -3,9 +3,14 @@ import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
-
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import SocialLogin from "./SocialLogin";
 export default function SignUp() {
+  const [loading, setLoading] = useState(false);
+  const route = useRouter();
   const {
     register,
     handleSubmit,
@@ -17,15 +22,41 @@ export default function SignUp() {
     setShowPassword(!showPassword);
   };
 
+  // submit user data on database
   const onSubmit = async (data) => {
     // Handle form submission logic here, such as sending data to a server
-    // console.log(data);
-    // const res = await axios("http://localhost:3000/api/auth/signup/new-user", {
-    //   data,
-    // });
-
-    // console.log(res);
-    console.log(data);
+    const email = data.email;
+    const password = data.password;
+    setLoading(true);
+    try {
+      // post data
+      const res = await axios.post(
+        "http://localhost:3000/api/auth/signup/new-user",
+        data
+      );
+      if (res.status === 200) {
+        const resp = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+        // toast
+        if (resp.error) {
+          toast.error(resp.error);
+          setLoading(false);
+        } else {
+          setLoading(false);
+          toast.success("Sign Up successfull");
+          route.push("/");
+        }
+      } else {
+        toast.error(res.data.message);
+        setLoading(false);
+      }
+    } catch (error) {
+      toast.error(res.data.message);
+      setLoading(false);
+    }
   };
 
   return (
@@ -118,9 +149,10 @@ export default function SignUp() {
           {/* Sign Up Button */}
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
           >
-            Sign Up
+            {loading ? "loading......" : "Sign Up"}
           </button>
         </form>
 
@@ -133,14 +165,7 @@ export default function SignUp() {
         </p>
 
         {/* Social Logins */}
-        <div className="flex justify-center items-center space-x-4 mt-6">
-          <button className="text-orange-600 hover:text-blue-500">
-            <FaGoogle size={30} />
-          </button>
-          <button className="text-blue-600 hover:text-blue-600">
-            <FaFacebook size={30} />
-          </button>
-        </div>
+        <SocialLogin />
       </div>
     </div>
   );
