@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 export default function Login() {
   const {
@@ -16,9 +17,16 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // Handle form submission, e.g., send data to server
-    console.log(data);
+
+    try {
+      const resp = await signIn("credentials", {
+        data,
+        redirect: false,
+      });
+      console.log(resp);
+    } catch (error) {}
   };
 
   return (

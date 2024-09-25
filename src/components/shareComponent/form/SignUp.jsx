@@ -20,17 +20,18 @@ export default function SignUp() {
   // submit user data on database
   const onSubmit = async (data) => {
     // Handle form submission logic here, such as sending data to a server
- 
-  try {
-    // post data
-    const res = await axios.post("http://localhost:3000/api/auth/signup/new-user",
-      data);
 
-    console.log(res);
-  } catch (error) {
-    console.log(error)
-  }
+    try {
+      // post data
+      const res = await axios.post(
+        "http://localhost:3000/api/auth/signup/new-user",
+        data
+      );
 
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
