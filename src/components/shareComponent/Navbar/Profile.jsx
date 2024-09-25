@@ -1,7 +1,8 @@
 "use client";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import {
   FaUserEdit,
@@ -13,6 +14,7 @@ import {
 
 function Profile({ setIsDropDown }) {
   const session = useSession();
+  const route = useRouter();
 
   return (
     <div>
@@ -22,7 +24,11 @@ function Profile({ setIsDropDown }) {
           <Image
             width={64}
             height={64}
-            src={`https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid`}
+            src={
+              session.data?.user?.image
+                ? session.data?.user?.image
+                : "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid"
+            }
             alt="Profile picture"
             className="rounded-full mx-auto"
           ></Image>
@@ -74,7 +80,12 @@ function Profile({ setIsDropDown }) {
           </Link>
         </li>
         <li>
-          <button className="flex items-center p-3 md:md:hover:text-blue-300 transition duration-200 ease-in-out w-full text-left">
+          <button
+            onClick={async () => {
+              await signOut();
+            }}
+            className="flex items-center p-3 md:md:hover:text-blue-300 transition duration-200 ease-in-out w-full text-left"
+          >
             <FaSignOutAlt className="w-5 h-5 text-red-500" />
             <span className="ml-3 font-semibold text-red-500">Logout</span>
           </button>

@@ -1,14 +1,15 @@
 "use client";
 import axios from "axios";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaGoogle, FaFacebook, FaEyeSlash, FaEye } from "react-icons/fa";
-
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import SocialLogin from "./SocialLogin";
 export default function SignUp() {
+  const [loading, setLoading] = useState(false);
   const route = useRouter();
   const {
     register,
@@ -24,7 +25,9 @@ export default function SignUp() {
   // submit user data on database
   const onSubmit = async (data) => {
     // Handle form submission logic here, such as sending data to a server
-
+    const email = data.email;
+    const password = data.password;
+    setLoading(true);
     try {
       // post data
       const res = await axios.post(
@@ -32,30 +35,27 @@ export default function SignUp() {
         data
       );
       if (res.status === 200) {
-        const email = data.email;
-        const password = data.password;
-        // SignUp after login
-        try {
-          const resp = await signIn("credentials", {
-            email,
-            password,
-            redirect: false,
-          });
-          // toast
-          if (resp.error) {
-            toast.error(resp.error);
-          } else {
-            route.push("/");
-            toast.success("SignUp Successfully");
-          }
-        } catch (error) {
-          console.log("error", error);
+        const resp = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
+        });
+        // toast
+        if (resp.error) {
+          toast.error(resp.error);
+          setLoading(false);
+        } else {
+          setLoading(false);
+          toast.success("Sign Up successfull");
+          route.push("/");
         }
       } else {
         toast.error(res.data.message);
+        setLoading(false);
       }
     } catch (error) {
-      console.log(error);
+      toast.error(res.data.message);
+      setLoading(false);
     }
   };
 
@@ -149,9 +149,10 @@ export default function SignUp() {
           {/* Sign Up Button */}
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
           >
-            Sign Up
+            {loading ? "loading......" : "Sign Up"}
           </button>
         </form>
 
@@ -164,14 +165,7 @@ export default function SignUp() {
         </p>
 
         {/* Social Logins */}
-        <div className="flex justify-center items-center space-x-4 mt-6">
-          <button className="text-orange-600 hover:text-blue-500">
-            <FaGoogle size={30} />
-          </button>
-          <button className="text-blue-600 hover:text-blue-600">
-            <FaFacebook size={30} />
-          </button>
-        </div>
+        <SocialLogin />
       </div>
     </div>
   );

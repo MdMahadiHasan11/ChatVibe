@@ -2,18 +2,21 @@ import connectDB from "@/lib/connectDB";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
-
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 const handler = NextAuth({
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60,
   },
   providers: [
+    // login with email
     CredentialsProvider({
       credentials: {
         email: {},
         password: {},
       },
+
       async authorize(credentials) {
         const { email, password } = credentials;
 
@@ -42,6 +45,16 @@ const handler = NextAuth({
         console.log(passwordMatched);
         return { currentUser };
       },
+    }),
+    // login with google
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    //login with facebook
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     }),
   ],
   callbacks: {},
