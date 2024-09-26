@@ -1,6 +1,8 @@
 "use client";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import {
   FaUserEdit,
@@ -11,20 +13,29 @@ import {
 } from "react-icons/fa";
 
 function Profile({ setIsDropDown }) {
+  const session = useSession();
+  const route = useRouter();
+
   return (
     <div>
-      <ul className="md:absolute right-0 mt-2 p-2 md:w-64  md:bg-white bg-transparent shadow-lg rounded-lg z-50 animate__animated animate__fadeInDown">
+      <ul className="absolute right-0 mt-6 p-2 md:w-64  bg-white bg-transparent shadow-lg rounded-lg z-50 animate__animated animate__fadeInDown border-2">
         {/* Profile Header */}
         <li className="p-4 text-center border-b">
           <Image
             width={64}
             height={64}
-            src={`https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid`}
+            src={
+              session.data?.user?.image
+                ? session.data?.user?.image
+                : "https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1726704000&semt=ais_hybrid"
+            }
             alt="Profile picture"
             className="rounded-full mx-auto"
           ></Image>
 
-          <h3 className="mt-2 font-bold">user Name</h3>
+          <h3 className="mt-2 font-bold">
+            {session.data?.user?.name || "User Name"}
+          </h3>
         </li>
 
         {/* Menu Items */}
@@ -69,7 +80,12 @@ function Profile({ setIsDropDown }) {
           </Link>
         </li>
         <li>
-          <button className="flex items-center p-3 md:md:hover:text-blue-300 transition duration-200 ease-in-out w-full text-left">
+          <button
+            onClick={async () => {
+              await signOut();
+            }}
+            className="flex items-center p-3 md:md:hover:text-blue-300 transition duration-200 ease-in-out w-full text-left"
+          >
             <FaSignOutAlt className="w-5 h-5 text-red-500" />
             <span className="ml-3 font-semibold text-red-500">Logout</span>
           </button>
