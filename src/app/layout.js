@@ -24,16 +24,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <AuthProvider>
           <header>
             <Navbar></Navbar>
           </header>
           {/* bg-[#e2e7fc] */}
-          <main className="mx-auto" style={{background:"linear-gradient(135deg, #e2e7fc 0%, #e2fcf5 100%)"}}>
+          <main
+            className='mx-auto bg-[linear-gradient(135deg,_#e2e7fc_0%,_#e2fcf5_100%)]'
+            // style={{ background: "linear-gradient(135deg, #e2e7fc 0%, #e2fcf5 100%)" }}
+          >
             <Container>
-              <div className="min-h-[calc(100vh-280px)] py-12">{children}</div>
+              <div className='min-h-[calc(100vh-280px)] py-12'>{children}</div>
             </Container>
           </main>
           <Footer></Footer>
