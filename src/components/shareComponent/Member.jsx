@@ -4,7 +4,7 @@ import React from "react";
 const Member = ({ src, name, profession, role }) => {
   // console.log(src, name, profession);
   return (
-    <div className='flex flex-col items-center justify-between border border-black rounded-md bg-transparent hover:bg-[#aabcd8] hover:scale-105 transition-all h-auto md:max-w-[320px] min-w-80 md:min-w-64 mx-auto'>
+    <div className='flex flex-col items-center justify-between border border-black rounded-md bg-transparent hover:bg-[#aabcd8] hover:scale-105 transition-all h-auto max-w-[320px] mx-auto'>
       <Image
         src={src}
         alt={name}
