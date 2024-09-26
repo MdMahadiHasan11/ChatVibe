@@ -1,6 +1,7 @@
 "use client";
 import SectionContainer from "@/components/shareComponent/SectionContainer";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const Banner = () => {
@@ -38,18 +39,26 @@ const Banner = () => {
   }, [slides.length]);
 
   return (
-    <div className='overflow-x-hidden'>
+    <div className="overflow-x-hidden">
       <SectionContainer>
-        <div className='flex flex-col-reverse md:flex-row items-center justify-evenly '>
+        <div className="flex flex-col-reverse md:flex-row items-center justify-evenly ">
           {/* Left Section - Text and Buttons */}
-          <div className='h-full flex flex-col justify-center text-left md:p-4 lg:p-4 lg:mr-4 space-y-4 lg:space-y-6'>
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold mb-4'>
+          <div className="h-full flex flex-col justify-center text-left md:p-4 lg:p-4 lg:mr-4 space-y-4 lg:space-y-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Meeting and Video Call for <br />
               Everyone with
-              <span className='text-blue-500'> ChatVibe</span>
+              <span className="text-blue-500"> ChatVibe</span>
             </h1>
 
-            <div className='flex flex-col gap-4 md:flex-row space-x-3'>
+            <div className="flex flex-col gap-4 md:flex-row space-x-3">
+              <Link
+                href="https://chatvibe-eta.vercel.app/"
+                className="w-full text-center bg-blue-500 text-white p-2 md:py-2 md:px-4 rounded-lg hover:bg-blue-600 transition duration-300">
+                Try Now
+              </Link>
+            </div>
+
+            {/* <div className='flex flex-col gap-4 md:flex-row space-x-3'>
               <button className='bg-blue-500 text-white p-2 md:py-2 md:px-4 rounded-lg hover:bg-blue-600 transition duration-300'>
                 New Meeting
               </button>
@@ -69,52 +78,52 @@ const Banner = () => {
                 disabled={!meetingLink}>
                 Join
               </button>
-            </div>
+            </div> */}
 
-            <p className='mt-10 text-gray-500'>
+            <p className="mt-10 text-gray-500">
               Learn more about{" "}
-              <a href='#' className='text-blue-500'>
+              <a href="#" className="text-blue-500">
                 Our team.
               </a>
             </p>
           </div>
 
           {/* Right Section - Auto-Sliding Image/Slider */}
-          <div className='flex-1 h-[500px] max-w-full md:max-w-[620px] pb-12 lg:max-w-[720px] lg:ml-8'>
-            <div className='bg-[#d9d9d9] p-6 rounded-lg shadow-lg h-full flex flex-col justify-center space-y-4'>
+          <div className="flex-1 h-[500px] max-w-full md:max-w-[620px] pb-12 lg:max-w-[720px] lg:ml-8">
+            <div className="bg-[#d9d9d9] p-6 rounded-lg shadow-lg h-full flex flex-col justify-center space-y-4">
               <Image
                 width={208}
                 height={208}
                 src={slides[activeSlide].img}
                 alt={slides[activeSlide].text}
-                className='w-52 h-52  rounded-full mx-auto'
+                className="w-52 h-52  rounded-full mx-auto"
               />
-              <p className='mt-4 text-center text-gray-600'>
+              <p className="mt-4 text-center text-gray-600">
                 {slides[activeSlide].text}
               </p>
-              <p className='mt-2 text-center text-sm text-gray-500'>
+              <p className="mt-2 text-center text-sm text-gray-500">
                 {slides[activeSlide].description}
               </p>
             </div>
-            <div className='flex justify-between mt-4'>
+            <div className="flex justify-between mt-4">
               <button
                 onClick={() =>
                   setActiveSlide(
                     (activeSlide - 1 + slides.length) % slides.length
                   )
                 }
-                className='text-blue-500'>
+                className="text-blue-500">
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  className='w-6 h-6'>
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-6 h-6">
                   <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M15 19l-7-7 7-7'
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 19l-7-7 7-7"
                   />
                 </svg>
               </button>
@@ -122,18 +131,18 @@ const Banner = () => {
                 onClick={() =>
                   setActiveSlide((activeSlide + 1) % slides.length)
                 }
-                className='text-blue-500'>
+                className="text-blue-500">
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  className='w-6 h-6'>
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-6 h-6">
                   <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M9 5l7 7-7 7'
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
                   />
                 </svg>
               </button>
