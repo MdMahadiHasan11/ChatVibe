@@ -77,6 +77,7 @@ function Navbar() {
         </div>
         {/* mobile menu */}
         <MobileMenu />
+        {/* add a comment */}
       </div>
     </nav>
   );
