@@ -30,7 +30,8 @@ export default function RootLayout({ children }) {
           <header>
             <Navbar></Navbar>
           </header>
-          <main className="mx-auto bg-[#e2e7fc]">
+          {/* bg-[#e2e7fc] */}
+          <main className="mx-auto" style={{background:"linear-gradient(135deg, #e2e7fc 0%, #e2fcf5 100%)"}}>
             <Container>
               <div className="min-h-[calc(100vh-280px)] py-12">{children}</div>
             </Container>
