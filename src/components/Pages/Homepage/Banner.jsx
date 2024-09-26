@@ -22,10 +22,10 @@ const Banner = () => {
       img: "https://i.ibb.co.com/ynh16GR/memory.png", // Replace with actual image source
     },
     {
-      text: "Connect with anyone",
+      text: "Record the conversation",
       description:
-        "Invite your team members to join the meeting via a shared link.",
-      img: "https://i.ibb.co.com/SfpWJdQ/images.jpg", // Replace with actual image source
+        "Record a meeting and share the video link to your team member of friends",
+      img: "https://plus.unsplash.com/premium_vector-1726096327716-39607e9a991a?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Replace with actual image source
     },
   ];
 
