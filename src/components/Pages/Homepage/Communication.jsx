@@ -7,7 +7,7 @@ const Communication = () => {
   return (
     <SectionContainer>
       <div className='flex flex-col md:flex-row justify-around items-center gap-8'>
-        <div className="md:flex-1 lg:flex-initial">
+        <div className='md:flex-1 lg:flex-initial'>
           <Image
             src={`https://i.ibb.co.com/M5GtMCV/message.png`}
             alt='Secure Conversations'
@@ -19,7 +19,7 @@ const Communication = () => {
 
         <div className='flex flex-col justify-center md:flex-1 lg:flex-initial'>
           <h2 className='text-4xl font-bold'>
-            <span className='text-4xl font-bold text-violet-500'>
+            <span className='text-4xl font-bold text-blue-500'>
               Communication
             </span>{" "}
             with live discussions
@@ -28,7 +28,7 @@ const Communication = () => {
             Discuss directly with the team, you can send document files for the
             next level of collaboration.
           </p>
-          <button className='btn border-0 text-white text-base mt-4 bg-violet-500 '>
+          <button className='btn border-0 text-white text-base mt-4 bg-blue-500 '>
             Learn More
           </button>
         </div>

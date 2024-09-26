@@ -8,11 +8,11 @@ const Conversations = () => {
     <SectionContainer>
       <div className='flex flex-col-reverse md:flex-row justify-around gap-8 items-center'>
         <div className='flex flex-col justify-center md:flex-1 lg:flex-initial'>
-          <h6 className='text-violet-500 font-semibold pb-2'>
+          <h6 className='text-blue-500 font-semibold pb-2'>
             Communicate-Share Ideas-Save Time
           </h6>
           <h2 className='text-4xl font-bold'>
-            <span className='text-4xl font-bold text-violet-500'>Secure</span>{" "}
+            <span className='text-4xl font-bold text-blue-500'>Secure</span>{" "}
             Conversations
           </h2>
           <p className='text-base text-[#677471] lg:w-[500px] pt-4'>
@@ -20,11 +20,11 @@ const Conversations = () => {
             pose, build upper- body strength. The standing poses, especially if
             you hold them for several long breaths
           </p>
-          <button className='btn border-0 text-white text-base mt-4 bg-violet-500 '>
+          <button className='btn border-0 text-white text-base mt-4 bg-blue-500 '>
             Get Started
           </button>
         </div>
-        <div className="flex-1 lg:flex-initial">
+        <div className='flex-1 lg:flex-initial'>
           <Image
             src={`https://i.ibb.co.com/9YQvyS2/bg.jpg`}
             alt='Secure Conversations'
