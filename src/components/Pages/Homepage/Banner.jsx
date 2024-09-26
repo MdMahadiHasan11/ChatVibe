@@ -38,7 +38,7 @@ const Banner = () => {
   }, [slides.length]);
 
   return (
-    <div className='overflow-x-hidden overflow-y-hidden'>
+    <div className='overflow-x-hidden'>
       <SectionContainer>
         <div className='flex flex-col-reverse md:flex-row items-center justify-evenly '>
           {/* Left Section - Text and Buttons */}

@@ -6,25 +6,25 @@ import React from "react";
 const Communication = () => {
   return (
     <SectionContainer>
-      <div className='flex flex-col md:flex-row justify-around'>
-        <div>
+      <div className='flex flex-col md:flex-row justify-around items-center gap-8'>
+        <div className="md:flex-1 lg:flex-initial">
           <Image
             src={`https://i.ibb.co.com/M5GtMCV/message.png`}
             alt='Secure Conversations'
-            className='w-[460px] h-[460px]  mt-6 object-cover border-0 rounded-xl'
-            width={330}
-            height={330}
+            className='lg:w-[460px] lg:h-[460px]  mt-6 object-cover border-0 rounded-xl'
+            width={320}
+            height={320}
           />
         </div>
 
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center md:flex-1 lg:flex-initial'>
           <h2 className='text-4xl font-bold'>
             <span className='text-4xl font-bold text-violet-500'>
               Communication
             </span>{" "}
             with live discussions
           </h2>
-          <p className='text-base text-[#677471] w-[500px] pt-4'>
+          <p className='text-base text-[#677471] lg:w-[500px] pt-4'>
             Discuss directly with the team, you can send document files for the
             next level of collaboration.
           </p>

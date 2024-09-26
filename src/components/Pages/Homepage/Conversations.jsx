@@ -6,8 +6,8 @@ import React from "react";
 const Conversations = () => {
   return (
     <SectionContainer>
-      <div className='flex flex-col-reverse md:flex-row justify-around'>
-        <div className='flex flex-col justify-center'>
+      <div className='flex flex-col-reverse md:flex-row justify-around gap-8 items-center'>
+        <div className='flex flex-col justify-center md:flex-1 lg:flex-initial'>
           <h6 className='text-violet-500 font-semibold pb-2'>
             Communicate-Share Ideas-Save Time
           </h6>
@@ -15,7 +15,7 @@ const Conversations = () => {
             <span className='text-4xl font-bold text-violet-500'>Secure</span>{" "}
             Conversations
           </h2>
-          <p className='text-base text-[#677471] w-[500px] pt-4'>
+          <p className='text-base text-[#677471] lg:w-[500px] pt-4'>
             Many of the poses, such as downward dog, upword dog and the plank
             pose, build upper- body strength. The standing poses, especially if
             you hold them for several long breaths
@@ -24,13 +24,13 @@ const Conversations = () => {
             Get Started
           </button>
         </div>
-        <div>
+        <div className="flex-1 lg:flex-initial">
           <Image
             src={`https://i.ibb.co.com/9YQvyS2/bg.jpg`}
             alt='Secure Conversations'
-            className='w-[460px] h-[460px]  mt-6 object-cover border-0 rounded-full'
-            width={330}
-            height={330}
+            className='h-full lg:w-[460px] lg:h-[460px] mt-6 object-cover border-0 rounded-full  md:ml-auto lg:ml-0'
+            width={320}
+            height={320}
           />
         </div>
       </div>
