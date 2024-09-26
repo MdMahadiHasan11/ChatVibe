@@ -22,7 +22,7 @@ const Communication = () => {
             <span className='text-4xl font-bold text-blue-500'>
               Communication
             </span>{" "}
-            with live discussions
+            with Live Discussions
           </h2>
           <p className='text-base text-[#677471] lg:w-[500px] pt-4'>
             Discuss directly with the team, you can send document files for the
