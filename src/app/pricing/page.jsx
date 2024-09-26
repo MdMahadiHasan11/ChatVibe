@@ -1,8 +1,9 @@
+import SectionContainer from "@/components/shareComponent/SectionContainer";
 import React from "react";
 
 const page = () => {
   return (
-    <section className='pt-10 bg-[#e2e7fc]'>
+    <SectionContainer>
       <div className='container mx-auto p-6 overflow-x-auto'>
         <table className='w-full'>
           <caption className='sr-only'>Pricing plan comparison</caption>
@@ -175,7 +176,7 @@ const page = () => {
           </tbody>
         </table>
       </div>
-    </section>
+    </SectionContainer>
   );
 };
 
